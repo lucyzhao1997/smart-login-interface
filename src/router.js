@@ -4,7 +4,7 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: () => import('../views/Home.vue'),
+        component: () => import('./Home.vue'),
         meta:{
             requiresAuth: true
         }
@@ -12,16 +12,17 @@ const routes = [
     {
         path: '/login',
         name: 'Login',
-        component: () => import('../views/Login.vue')
+        component: () => import('./Login.vue')
     },
     {
         path: '/register',
         name: 'Register',
-        component: () => import('../views/Register.vue')
+        component: () => import('./Register.vue')
     }
 ]
 
 const router = createRouter({
-    history : createWebHistory()
+    history : createWebHistory(),
+    routes
 });
 export default router;
