@@ -25,7 +25,8 @@ const router = createRouter({
     history : createWebHistory(),
     routes
 });
-router.beforeEach(async (to, from, next){
+
+router.beforeEach(async (to, from, next) =>{
     if(to.matched.some(record => record.meta.requiresAuth)){
         if(!localStorage.getItem('token')){
             return next()
@@ -33,5 +34,5 @@ router.beforeEach(async (to, from, next){
         return next('./login')
     }
     next()
-})
+});
 export default router;
