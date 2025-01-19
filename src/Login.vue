@@ -1,9 +1,10 @@
 <template>
+  <main>
     <header>
       <h1 class="logo">Secret app</h1>
       <h1>Login</h1>
     </header>
-    <main>
+    
       <form @submit.prevent="">
         <label>
           <span>Enter your Email</span>
@@ -22,6 +23,62 @@
      
 
 </template>
+<style scoped>
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #E11D48;
+  color: #fff;
+}
+header{
+  padding: 1.5rem;
+}
+footer{
+  background-color: #fff;
+  width:100%;
+  color: #111827;
+  text-align: center;
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+}
+h2 {
+  font-size: 2.1rem
+}
+form {
+  flex: 1 1 0%;
+  display: block;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: white;
+  box-shadow: 0px -4px 12 px 4px rgba(0,0,0,0.1);
+  color: #111827;
+  padding: 4rem 1.5rem;
+  width: 100%;
+}
+label {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+label span {
+  display: block;
+  color: #9CA3AF;
+  font-size: 1.5rem;
+  font-weight:500;
+  margin-bottom: 0.5rem;
+}
+input:not([type="submit"]){
+  display: block;
+  width:100%;
+  border:1px solid #9CA3AF;
+  border-radius:1.5rem;
+  padding:1.5rem;
+  font-size:1rem;
+  color:var(--dark);
+  margin-bottom:1.5rem;
+}
+</style>
 <script setup>
 import { ref } from 'vue'
 const email = ref('')
