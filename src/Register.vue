@@ -3,6 +3,7 @@
     <header>
       <h1 class="logo">Secret app</h1>
       <h1>Register</h1>
+      <p>Register or log in with email and password</p>
     </header>
     
       <form @submit.prevent="">
@@ -18,7 +19,7 @@
           <span>Confirm your Password</span>
           <input type="confirm_passwordd" v-model="email" placeholder="**********"/>
         </label>
-        <input type="submit" value="Register"    />
+        <input type="submit" value="Register"    /> 
       </form>
     </main>
     <footer>

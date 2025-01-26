@@ -3,6 +3,7 @@
     <header>
       <h1 class="logo">Secret app</h1>
       <h1>Login</h1>
+      <p>Login or create an account to start using the app</p>
     </header>
     
       <form @submit.prevent="">
