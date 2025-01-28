@@ -109,4 +109,5 @@ input[type="submit"]:hover{
 import { ref } from 'vue'
 const email = ref('')
 const password = ref('')
+const confirm_passwordd = ref('')
 </script>
