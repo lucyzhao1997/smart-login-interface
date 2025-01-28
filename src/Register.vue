@@ -13,11 +13,11 @@
         </label>
         <label>
           <span>Enter your Password</span>
-          <input type="passwordd" v-model="email" placeholder="**********"/>
+          <input type="password" v-model="email" placeholder="**********"/>
         </label>
         <label>
           <span>Confirm your Password</span>
-          <input type="confirm_passwordd" v-model="email" placeholder="**********"/>
+          <input type="confirm_password" v-model="email" placeholder="**********"/>
         </label>
         <input type="submit" value="Register"    /> 
       </form>
@@ -107,7 +107,29 @@ input[type="submit"]:hover{
 </style>
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const email = ref('')
 const password = ref('')
-const confirm_passwordd = ref('')
+const confirm_password = ref('')
+
+const register = async() => {
+  if (!email || !password || !confirm_password) {
+    return alert('Please fill in all fields')
+  }
+  if (password !== confirm_password) {
+    return alert('Passwords do not match')
+  }
+
+  const res = await fetch('http://localhost:3333/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: email.value,
+      password: password.value
+    })
+  })
+}
 </script>
