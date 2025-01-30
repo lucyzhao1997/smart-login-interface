@@ -12,11 +12,11 @@ const client = new Client({
     env: envs.test
 });
 
-const port = process.env.PORT || 5173;
+const port = process.env.PORT || 3333;
 app.use(cors());
 app.use(express.json());
 
-app.post('./register'   , async (req, res) => {
+app.post('/register'   ,async (req, res) => {
     const  {email, password} = req.body;
     try{
         //new token
@@ -25,14 +25,14 @@ app.post('./register'   , async (req, res) => {
             password,
             session_duration_minutes: 60
         })
-        response.json({
+        res.json({
             success:true,
             message:'User created successfully',
             token: resp.session_token
         })
     } catch(e){
         console.log(e);
-        response.json({
+        res.json({
             success: false,
             message: e.error_message,
             e:e

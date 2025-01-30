@@ -45,7 +45,7 @@ const Register = async() => {
     return alert('Passwords do not match')
   }
 
-  const res = await fetch('http://localhost:5173/register', {
+  const res = await fetch('http://localhost:3333/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

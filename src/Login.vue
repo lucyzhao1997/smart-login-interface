@@ -13,7 +13,7 @@
         </label>
         <label>
           <span>Enter your Password</span>
-          <input type="passwordd" v-model="email" placeholder="**********"/>
+          <input type="password" v-model="password" placeholder="**********"/>
         </label>
         <input type="submit" value="Login"    />
       </form>
