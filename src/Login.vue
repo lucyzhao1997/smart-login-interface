@@ -6,7 +6,7 @@
       <p>Login or create an account to start using the app</p>
     </header>
     
-      <form @submit.prevent="">
+      <form @submit.prevent="Login">
         <label>
           <span>Enter your Email</span>
           <input type="email" v-model="email" placeholder="text@text.com"/>

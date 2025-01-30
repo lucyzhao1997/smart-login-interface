@@ -6,7 +6,7 @@
       <p>Register or log in with email and password</p>
     </header>
     
-      <form @submit.prevent="">
+      <form @submit.prevent="Register">
         <label>
           <span>Enter your Email</span>
           <input type="email" v-model="email" placeholder="text@text.com"/>
@@ -45,7 +45,7 @@ const Register = async() => {
     return alert('Passwords do not match')
   }
 
-  const res = await fetch('http://localhost:3333/register', {
+  const res = await fetch('http://localhost:5173/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

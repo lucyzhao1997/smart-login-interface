@@ -12,7 +12,7 @@ const client = new Client({
     env: envs.test
 });
 
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 5173;
 app.use(cors());
 app.use(express.json());
 
