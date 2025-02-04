@@ -16,7 +16,7 @@ const port = process.env.PORT || 3333;
 app.use(cors());
 app.use(express.json());
 
-app.post('/register'   ,async (req, res) => {
+app.post('/register'  , async (req, res) => {
     const  {email, password} = req.body;
     try{
         //new token
@@ -40,7 +40,7 @@ app.post('/register'   ,async (req, res) => {
     }
 })
 
-app.post('./login'   , async (req, res) => {
+app.post('/login'   , async (req, res) => {
     const  {email, password} = req.body;
     try{
         
@@ -64,7 +64,7 @@ app.post('./login'   , async (req, res) => {
     }
 })
 //check if token is still valid
-app.post('./authenticate'   , async (req, res) => {
+app.post('/authenticate'   , async (req, res) => {
     const  {session_token} = req.body;
     try{
         await client.sessions.authenticate({
