@@ -126,7 +126,7 @@ const Login = async() => {
 
   if (res.success) {
     localStorage.setItem('token', res.token);
-    router.push('/home');
+    router.push('/');
   } else {
     alert(res.message);
   }

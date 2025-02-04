@@ -4,6 +4,7 @@
         <h1>Home</h1>
       </header>
       <button @click="logout">Logout</button>
+      </main>
   </template>
 <script setup>
 import {useRouter} from 'vue-router';
