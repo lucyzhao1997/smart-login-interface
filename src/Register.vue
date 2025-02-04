@@ -58,7 +58,7 @@ const Register = async() => {
 
   if (res.success) {
     localStorage.setItem('token', res.token);
-    router.push('/');
+    router.push('/home');
   } else {
     alert(res.message);
   }
