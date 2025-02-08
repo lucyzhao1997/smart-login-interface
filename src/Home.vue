@@ -1,14 +1,31 @@
 <template>
     <main>
       <header>
-        <h1>Home</h1>
+      <h1>Welcome Home</h1>
+      <p>Your journey starts here. Explore, engage, and enjoy!</p>
       </header>
-      <button @click="logout">Logout</button>
-      </main>
+      <section class="buttons">
+        <button @click="navigateToProfile">Profile</button>
+        <button @click="navigateToSettings">Settings</button>
+      </section>
+      <footer> 
+        <button @click="logout">Logout</button>
+      </footer>
+     </main>
   </template>
 <script setup>
 import {useRouter} from 'vue-router';
 const router = useRouter();
+
+const navigateToProfile = () => {
+  // Add your routing logic here
+  console.log("Navigating to Profile...");
+};
+
+const navigateToSettings = () => {
+  // Add your routing logic here
+  console.log("Navigating to Settings...");
+};
 const logout = async() => {
   const res = await fetch('http://localhost:3333/logout', {
     method: 'POST',
