@@ -84,20 +84,21 @@ app.post('/authenticate'   , async (req, res) => {
     }
 })
 //logout and wipe token
-app.post('./logout'   , async (req, res) => {
+app.post('/logout'   , async (req, res) => {
     const  {session_token} = req.body;
+    console.log('Received session_token:', session_token);
     try{
        
         await client.sessions.revoke({
             session_token
         })
-        response.json({
+        res.json({
             success:true,
             message:'Successfully logged out'
         })
     } catch(e){
         console.log(e);
-        response.json({
+        res.json({
             success: false,
             message: e.error_message,
             e:e
